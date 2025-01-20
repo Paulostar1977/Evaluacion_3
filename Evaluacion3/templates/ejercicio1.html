@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Ejercicio 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            background-color: #f9f9f9; /* Fondo gris claro */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            width: 300px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc; /* Borde gris claro */
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Azul más oscuro en hover */
+        }
+
+        /* Sombra gris para el formulario */
+        .form-container {
+            border: 1px solid #ddd; /* Borde gris claro */
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario Ejercicio 1</h1>
+
+    <div class="form-container">
+        <form method="POST">
+            <label for="nota1">Nota 1:</label>
+            <input type="number" id="nota1" name="nota1" min="10" max="70" required>
+
+            <label for="nota2">Nota 2:</label>
+            <input type="number" id="nota2" name="nota2" min="10" max="70" required>
+
+            <label for="nota3">Nota 3:</label>
+            <input type="number" id="nota3" name="nota3" min="10" max="70" required>
+
+            <label for="asistencia">Asistencia (%):</label>
+            <input type="number" id="asistencia" name="asistencia" min="0" max="100" required>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        {% if promedio is not none %}
+        <h3>Promedio: {{ promedio }}</h3>
+        <h3>Estado: {{ estado }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
